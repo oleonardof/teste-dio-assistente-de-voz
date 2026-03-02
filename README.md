@@ -1,43 +1,92 @@
-# Assistente de Voz Multilíngue com Whisper e OpenRouter
+# 🎙️ Assistente de Voz Multi-Idiomas com Whisper e OpenRouter
 
-Este projeto demonstra como criar um assistente de voz simples dentro de um Jupyter Notebook ou Google Colab. O fluxo permite gravar áudio no navegador, transcrever a fala com Whisper, enviar o texto para um modelo de linguagem e gerar uma resposta que é convertida novamente em áudio.
-
-A ideia inicial era utilizar a API do ChatGPT diretamente. Durante os testes ocorreram limitações relacionadas ao uso da API, então a implementação foi adaptada para utilizar o OpenRouter. O OpenRouter funciona como um gateway que permite acessar diferentes modelos de linguagem através de uma única API.
-
-O objetivo do notebook é mostrar, de forma prática, como integrar captura de áudio, reconhecimento de fala, modelos de linguagem e síntese de voz em um único fluxo.
+Um assistente de voz inteligente que transcreve áudio, processa linguagem natural
+e responde em voz sintetizada — tudo rodando no Google Colab.
 
 ---
 
-## Como o assistente funciona
+## 📥 Como Executar
 
-O funcionamento segue uma sequência simples:
+Baixe o arquivo abaixo e faça o upload no seu próprio Google Colab:
 
-1. O usuário grava um áudio diretamente no navegador.
-2. O áudio é enviado para o ambiente Python.
-3. O Whisper realiza a transcrição da fala para texto.
-4. O texto é enviado para um modelo de linguagem via OpenRouter.
-5. O modelo gera uma resposta em texto.
-6. A resposta é convertida em áudio usando gTTS.
+[⬇️ Baixar Notebook](https://github.com/SEU_USUARIO/SEU_REPOSITORIO/raw/main/assistente-de-voz/Cópia_de_Assistente_de_Voz_Multi_Idiomas_Com_Whisper_e_ChatGPT.ipynb)
 
-Fluxo resumido:
-
-Usuário fala → gravação no navegador → Whisper (speech to text) → modelo de linguagem via OpenRouter → resposta em texto → gTTS (text to speech) → áudio da resposta.
+1. Acesse [colab.research.google.com](https://colab.research.google.com)
+2. Clique em **Arquivo → Fazer upload de notebook**
+3. Selecione o arquivo baixado
+4. Siga as instruções dentro do notebook
 
 ---
 
-## Tecnologias utilizadas
+## 📖 Sobre o Projeto
 
-Python  
-Whisper  
-OpenRouter API  
-gTTS (Google Text to Speech)  
-JavaScript MediaStream API  
-Jupyter Notebook ou Google Colab  
+Este notebook implementa um pipeline completo de assistente de voz:
+
+**Áudio → Transcrição → Resposta por LLM → Voz Sintetizada**
+
+A ideia original era utilizar a API da **OpenAI (ChatGPT)** como modelo de linguagem.
+Porém, devido a limitações de cota e problemas com billing, o projeto foi adaptado
+para usar o **OpenRouter** — uma plataforma que oferece acesso gratuito a diversos
+modelos de linguagem como Llama, Gemma e outros.
 
 ---
 
-## Como executar
+## 🛠️ Tecnologias Utilizadas
 
-Primeiro clone o repositório:
+| Tecnologia | Função |
+|-----------|--------|
+| OpenAI Whisper | Transcrição de áudio para texto |
+| OpenRouter | API de LLM gratuita (substituto do ChatGPT) |
+| gTTS | Síntese de voz (texto para áudio) |
+| Google Colab | Ambiente de execução |
 
+---
 
+## 🔄 Pipeline do Projeto
+
+🎤 Gravação → 🔊 Whisper → 🤖 OpenRouter LLM → 🔈 gTTS
+
+---
+
+## ⚙️ Configuração
+
+### Dependências
+pip install openai-whisper openai gTTS
+
+### API Key do OpenRouter
+1. Crie conta gratuita em openrouter.ai
+2. Acesse Keys → Create Key
+3. Cole no notebook:
+os.environ['OPENROUTER_API_KEY'] = 'sua-chave-aqui'
+
+---
+
+## 🔀 Por que OpenRouter?
+
+| Provedor | Status | Motivo |
+|----------|--------|--------|
+| OpenAI (ChatGPT) | ❌ | Cota excedida |
+| Anthropic (Claude) | ❌ | Exige depósito mínimo |
+| Google Gemini | ❌ | Biblioteca descontinuada + cota zerada |
+| OpenRouter | ✅ | Gratuito, sem cartão, múltiplos modelos |
+
+Modelos gratuitos disponíveis:
+- google/gemma-3-27b-it:free
+- meta-llama/llama-3.3-70b-instruct:free
+- mistralai/mistral-7b-instruct:free
+
+💡 Todo modelo com :free no final é gratuito!
+
+---
+
+## 📝 Observações
+
+- O Whisper roda localmente — não precisa de API key
+- Se um modelo estiver sobrecarregado, basta trocar o nome do modelo
+- A variável `language` controla o idioma da transcrição e da voz
+
+---
+
+## 📄 Licença
+
+Projeto de uso educacional, livre para modificações.
