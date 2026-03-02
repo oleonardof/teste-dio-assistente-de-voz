@@ -9,7 +9,7 @@ e responde em voz sintetizada — tudo rodando no Google Colab.
 
 Baixe o arquivo abaixo e faça o upload no seu próprio Google Colab:
 
-[⬇️ Baixar Notebook]([https://github.com/SEU_USUARIO/SEU_REPOSITORIO/raw/main/assistente-de-voz/Cópia_de_Assistente_de_Voz_Multi_Idiomas_Com_Whisper_e_ChatGPT.ipynb](https://github.com/oleonardof/teste-dio-assistente-de-voz/blob/main/assistente-de-voz/C%C3%B3pia_de_Assistente_de_Voz_Multi_Idiomas_Com_Whisper_e_ChatGPT.ipynb)
+[⬇️ Baixar Notebook](https://github.com/oleonardof/teste-dio-assistente-de-voz/blob/main/assistente-de-voz/C%C3%B3pia_de_Assistente_de_Voz_Multi_Idiomas_Com_Whisper_e_ChatGPT.ipynb)
 
 1. Acesse [colab.research.google.com](https://colab.research.google.com)
 2. Clique em **Arquivo → Fazer upload de notebook**
